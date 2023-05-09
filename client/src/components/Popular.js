@@ -16,22 +16,22 @@ const Popular = () => {
             </nav>
             <div className='main-content'>
 
-            <div className='side-nav'>
-                <div className='side-nav-links'> 
-                
-                <ul className='side'>
-                    <li><Link to="/" element={< Home/>} >Home</Link></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+                <div className='side-nav'>
+                    <div className='side-nav-links'>
+
+                        <ul className='side'>
+                            <li><Link to="/" >Home</Link></li>
+                            <li><Link to="/about" >About</Link></li>
+                            <li><Link to='/contact'>Contact</Link></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className='main'>
+
                 </div>
             </div>
-            <div className='main'>
-                
-            </div>
-            </div>
-            </div>
-            );
+        </div>
+    );
 }
 
-            export default Popular;
+export default Popular;
