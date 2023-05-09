@@ -5,6 +5,9 @@ import Home from './components/Home'
 import Popular from './components/Popular';
 import About from './components/About';
 import Contact from './components/Contact';
+import Review from './components/Review';
+
+
 function App() {
   // const [path, setPath] = useState("");
 
@@ -19,6 +22,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/review' element={<Review />} />
         </Routes>
       </BrowserRouter>
     </div>

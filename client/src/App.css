@@ -47,6 +47,7 @@ hr {
 .arrow:hover{
   cursor:pointer;
 }
+
 .img-container {
   max-width: 100%;
   max-height: 100%;
@@ -59,6 +60,7 @@ hr {
   margin-left: 30px;
   transform: rotate(270deg);
 }
+
 .logo:hover{
   cursor:pointer;
 }
@@ -74,7 +76,7 @@ nav {
 }
 
 .nav-seconadry{
-  width: 100px;
+  width: 100%;
 }
 
 .popular {
@@ -102,6 +104,11 @@ nav {
   border-radius: 20px;
   margin-left: 20px;
   margin-top: 40px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap:20px;
 }
 .side-nav-links {
 display: flex;
@@ -132,3 +139,34 @@ ul {
   color:black;
   font-size: 18px;
 }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.travel-card{
+  border: 2px solid black;
+  border-radius: 22px;
+  height:150px;
+  width:67%;
+  display: flex;
+  justify-content: space-between;
+  margin:20px;
+}
+
+.photo-card{
+  width:130px;
+  border-radius: 20px;
+}
+
+.info-section{
+  width:95%;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* .favorites-heart{
+} */
