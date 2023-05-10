@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import Home from './Home';
 import unnamed from '../Images/unnamed.png'
-
-import KingsCross from '../places/KingsCross';
 import kingscross from '../Images/kingsCross.jpg'
 
 
