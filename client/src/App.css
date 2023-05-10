@@ -156,6 +156,9 @@ ul {
   margin:20px;
 }
 
+.travel-card:hover{
+  cursor: pointer;
+}
 .photo-card{
   width:130px;
   border-radius: 20px;

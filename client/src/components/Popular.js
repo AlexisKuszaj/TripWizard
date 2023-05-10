@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Home from './Home';
 import unnamed from '../Images/unnamed.png'
 
+import KingsCross from '../places/KingsCross';
 import kingscross from '../Images/kingsCross.jpg'
 
 
@@ -17,6 +18,11 @@ const Popular = () => {
     const homeLogo = (e) => {
         navigate('/')
     }
+
+    const kingsCross = (e) =>{
+        navigate("/kingscross")
+    }
+    
     return (
         <div className='popular'>
 
@@ -43,7 +49,7 @@ const Popular = () => {
                     </div>
                 </div>
                 <div className='main'>
-                    <div className="travel-card">
+                    <div className="travel-card" onClick={kingsCross}>
                         <img src={kingscross} alt="kings cross station"
                             className="photo-card"></img>
                         <div className='info-section'>
