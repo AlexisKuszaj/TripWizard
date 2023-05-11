@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import Home from './Home';
 import unnamed from '../Images/unnamed.png'
 import kingscross from '../Images/kingsCross.jpg'
+import LondonPic from '../Images/LondonPic.jpg';
+import NavBar from './NavBar';
+import Review from './Review';
 
 
 
@@ -17,15 +20,19 @@ const Popular = () => {
         navigate('/')
     }
 
-    const kingsCross = (e) =>{
+    const kingsCross = (e) => {
         navigate("/kingscross")
     }
-    
+
+    const London = (e) => {
+        navigate("/London")
+    }
+
     return (
         <div className='popular'>
 
             <nav className='nav-secondary'>
-                <div className="img-container">
+                <div className="img-container-other">
                     <img className="logo" src={unnamed} alt="Logo" onClick={homeLogo} />
                 </div>
                 <div >
@@ -35,27 +42,20 @@ const Popular = () => {
                 </div>
             </nav>
             <div className='main-content'>
-
-                <div className='side-nav'>
-                    <div className='side-nav-links'>
-
-                        <ul className='side'>
-                            <li><Link to="/" className='link'>Home</Link></li>
-                            <li><Link to="/about" className='link' >About</Link></li>
-                            <li><Link to='/contact' className='link'>Contact</Link></li>
-                        </ul>
-                    </div>
+                <div className='side-bars'>
+           <NavBar/>
+           <Review/>
                 </div>
                 <div className='main'>
                     <div className="travel-card" onClick={kingsCross}>
-                        <img src={kingscross} alt="kings cross station"
-                            className="photo-card"></img>
+                            <img src={kingscross} alt="kings cross station"
+                                className="photo-card"></img>
                         <div className='info-section'>
                             <div className="name">Kings Cross Station</div>
                         </div>
                     </div>
-                    <div className="travel-card">
-                        <img src={kingscross} alt="London"
+                    <div className="travel-card" onClick={London}>
+                        <img src={LondonPic} alt="London"
                             className="photo-card"></img>
                         <div className='info-section'>
                             <div className="name">London</div>
@@ -92,7 +92,7 @@ const Popular = () => {
 
                 </div>
             </div>
-        </div>
+            </div>
     );
 }
 

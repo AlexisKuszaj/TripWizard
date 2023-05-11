@@ -7,6 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Review from './components/Review';
 import KingsCross from './places/KingsCross';
+import London from './places/London';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/review' element={<Review />} />
           <Route path='/kingscross' element={<KingsCross />} />
+          <Route path='/London' element={<London />} />
         </Routes>
       </BrowserRouter>
     </div>

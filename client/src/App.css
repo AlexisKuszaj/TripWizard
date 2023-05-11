@@ -21,6 +21,28 @@
 
 }
 
+.kingscross {
+  width: 1519.2px;
+  height: 848px;
+}
+
+.kingscross-img-container{
+  width: 100%;
+  height: 100%;
+}
+
+.overlaybox {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  opacity: 0.9;
+}
+
 .text-overlay {
   position: absolute;
   top: 80%;
@@ -51,10 +73,16 @@ hr {
 .img-container {
   max-width: 100%;
   max-height: 100%;
+  margin-bottom: 30px
+}
+
+.img-container-other {
+  width: 100%;
+height: 100%;
+margin-bottom: 30px;
 }
 
 .logo {
-
   width: 100px;
   height: 150px;
   margin-left: 30px;
@@ -86,11 +114,12 @@ nav {
 
 .side-nav {
   background-color: white;
-  height: 400px;
+  height: 250px;
   width: 300px;
   border-radius: 20px;
   margin-left: 20px;
   margin-top: 40px;
+
 }
 
 .main-content {
@@ -110,10 +139,24 @@ nav {
   flex-direction: column;
   gap:20px;
 }
+.main-popular {
+  background-color: white;
+  height: 100%;
+  width: 1170px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap:20px;
+}
 .side-nav-links {
 display: flex;
 justify-content: center;
 margin-right: 50px;
+margin-top: 20px;
 }
 
 ul {
@@ -125,14 +168,59 @@ ul {
   list-style-type: none;
 }
 
+li {
+  display: flex;
+  margin-top: 25px;
+}
+
+
 .side {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+margin: 10px;
   width: 1500px;
   list-style-type: none;
+  margin-top:20px;
+    ;
 }
 
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.overlay-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-links p {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+a:hover .img-hover {
+  transform: scale(1.1);
+}
+
+a:hover .overlay-links {
+  opacity: 1;
+}
 
 .link{
   text-decoration: none;
@@ -144,6 +232,21 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px
+}
+
+.submit {
+  margin-top: 20px;
+}
+
+.side-nav-form {
+  background-color: white;
+  height: 400px;
+  width: 300px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
+
 }
 
 .travel-card{
@@ -154,10 +257,12 @@ ul {
   display: flex;
   justify-content: space-between;
   margin:20px;
-}
+} 
+
 
 .travel-card:hover{
   cursor: pointer;
+  transform: scale(1.1)
 }
 .photo-card{
   width:130px;
@@ -171,5 +276,54 @@ ul {
   margin-top: 20px;
 }
 
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+margin: 20px;
+ 
+}
+
+.London {
+  background-color: #E1D8C9;
+  object-fit: cover;
+
+}
+
+.photo-grid-item {
+  height: 220px;
+  width: 230px;
+  border-radius: 20px;
+}
+
+
+.popular-main-content {
+  margin: 20px;
+  display: flex;
+  background-color: #E1D8C9;
+  border-radius: 20px;
+  width:100%
+}
+
+
+.p-london {
+  width: 70%;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #f0efed;
+  border-radius: 0 20px 20px 0;
+  text-align: center;
+}
+
+a {
+  width: 95%;
+  text-decoration: none;
+  color: black;
+}
+
+
+span {
+  font-weight: bold;
+  font-size: 25px;
+}
 /* .favorites-heart{
 } */
