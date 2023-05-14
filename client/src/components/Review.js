@@ -1,30 +1,34 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Review = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-        const response = await axios.post('http://localhost:8000/api/newTripSchema', {
-            firstName: name,
-            email: email,
-            description: message
-          });
-          
-
+      const response = await axios.post('http://localhost:8000/api/newTripSchema', {
+        firstName: name,
+        email: email,
+        description: message,
+      });
+      console.log(response)
+      console.log(response.data)
       console.log('Response:', response.data);
       setName('');
       setEmail('');
       setMessage('');
+      // navigate("/myplaces")
     } catch (error) {
       console.error('Error:', error);
     }
   };
+
+
 
   return (
     <div>
@@ -63,7 +67,7 @@ const Review = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 required
               ></textarea>
-              <button className="submit" type="submit">
+              <button className="submit" type="submit" >
                 Submit
               </button>
             </form>

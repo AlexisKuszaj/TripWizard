@@ -6,10 +6,10 @@ import kingscross from '../Images/kingsCross.jpg'
 import LondonPic from '../Images/LondonPic.jpg';
 import NavBar from './NavBar';
 import Review from './Review';
-
-
-
-
+import Footer from './Footer';
+import train from "../Images/HogwartsExpress.jpg"
+import hogsmeade from "../Images/hogs.jpg"
+import dalley from "../Images/d-alley.jpg"
 
 // import Home from './Home';
 
@@ -28,6 +28,21 @@ const Popular = () => {
         navigate("/London")
     }
 
+    const Hogsmeade = (e) => {
+        navigate('/hogsmeade')
+    }
+    const DiagonAlley = (e) => {
+        navigate('/diagonalley')
+    }
+    const HogwartsExpress = (e) => {
+        navigate('/hogwartsexpress')
+    }
+    const UK = (e) => {
+        navigate('/uk-locations')
+    }
+    const Hogwarts = (e) => {
+        navigate('/hogwarts')
+    }
     return (
         <div className='popular'>
 
@@ -35,25 +50,16 @@ const Popular = () => {
                 <div className="img-container-other">
                     <img className="logo" src={unnamed} alt="Logo" onClick={homeLogo} />
                 </div>
-                <div >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" className='favorites-heart fa-lg'>
-                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-                    </svg>
-                </div>
             </nav>
             <div className='main-content'>
                 <div className='side-bars'>
-           <NavBar/>
-           <Review/>
+                    <NavBar />
+                    <Review />
                 </div>
+
+
+
                 <div className='main'>
-                    <div className="travel-card" onClick={kingsCross}>
-                            <img src={kingscross} alt="kings cross station"
-                                className="photo-card"></img>
-                        <div className='info-section'>
-                            <div className="name">Kings Cross Station</div>
-                        </div>
-                    </div>
                     <div className="travel-card" onClick={London}>
                         <img src={LondonPic} alt="London"
                             className="photo-card"></img>
@@ -61,38 +67,47 @@ const Popular = () => {
                             <div className="name">London</div>
                         </div>
                     </div>
-                    <div className="travel-card">
-                        <img src={kingscross} alt="Hogsmeade"
-                            className="photo-card"></img>
-                        <div className='info-section'>
-                            <div className="name">Hogsmede</div>
-                        </div>
-                    </div>
-                    <div className="travel-card">
-                        <img src={kingscross} alt="Diagon Alley"
-                            className="photo-card"></img>
-                        <div className='info-section'>
-                            <div className="name">Diagon Alley</div>
-                        </div>
-                    </div>
-                    <div className="travel-card">
-                        <img src={kingscross} alt="Hogwarts Express"
+                    <div className="travel-card" onClick={HogwartsExpress}>
+                        <img src={train} alt="Hogwarts Express"
                             className="photo-card"></img>
                         <div className='info-section'>
                             <div className="name">Hogwarts Express</div>
                         </div>
                     </div>
-                    <div className="travel-card">
-                        <img src={kingscross} alt="kings cross station"
+
+                    <div className="travel-card" onClick={Hogsmeade}>
+                        <img src={hogsmeade} alt="Hogsmeade"
                             className="photo-card"></img>
                         <div className='info-section'>
-                            <div className="name"></div>
+                            <div className="name">Hogsmeade</div>
+                        </div>
+                    </div>
+                    <div className="travel-card" onClick={DiagonAlley}>
+                        <img src={dalley} alt="Diagon Alley"
+                            className="photo-card"></img>
+                        <div className='info-section'>
+                            <div className="name">Diagon Alley</div>
+                        </div>
+                    </div>
+                    <div className="travel-card" onClick={Hogwarts}>
+                        <img src={kingscross} alt="Hogwarts"
+                            className="photo-card"></img>
+                        <div className='info-section'>
+                            <div className="name">Hogwarts</div>
+                        </div>
+                    </div>
+                    <div className="travel-card" onClick={UK}>
+                        <img src={kingscross} alt="United Kingom"
+                            className="photo-card"></img>
+                        <div className='info-section'>
+                            <div className="name">United Kingdom</div>
                         </div>
                     </div>
 
                 </div>
             </div>
-            </div>
+            <Footer />
+        </div>
     );
 }
 

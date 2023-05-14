@@ -13,7 +13,7 @@ const KingsCross = () => {
         navigate('/')
     }
     return (
-        <div className='kingscross'>
+        <div className='container'>
             <nav>
                 <div className="img-container">
                     <img className="logo" src={unnamed} alt="Logo" onClick={homeLogo} />
@@ -27,10 +27,17 @@ const KingsCross = () => {
             <div className='kingscross-img-container'>
                 <img className="kingscross" src={HogwartsExpress} alt='Kings Cross' />
                 <div className="overlaybox">
+                <button type="button" class="btn-close" disabled aria-label="Close"></button>
+
                     <h1>King's Cross Station</h1>
                     <h3>Euston Rd., London N1 9AL, UK</h3>
-            <h2> Start your journey here </h2>
-            <p >Come visit the iconic King's Cross Station! In the Movie 1 - Harry Potter and the Sorcerers Stone, Harry and his friends dash through a brick wall between platforms 9 and 10. In the real King’s Cross Station, platforms 9 and 10 are separated by tracks, but you can find a platform 9¾ on the wall in the station concourse. After visiting the Hogwarts Express, take a stroll through the Harry Potter Shop. Styled after Ollivander's wand emporium. Pick up your school robes for your house, as well  as, time-turners and horcruxes.</p>
+                    <h2> Start your journey here </h2>
+                    <p >Come visit the iconic King's Cross Station! In the Movie 1 -
+                        Harry Potter and the Sorcerers Stone, Harry and his friends dash through a brick wall between 
+                        platforms 9 and 10. In the real King’s Cross Station, platforms 9 and 10 are separated by tracks, 
+                        but you can find a platform 9¾ on the wall in the station concourse. After visiting the Hogwarts 
+                        Express, take a stroll through the Harry Potter Shop. Styled after Ollivander's wand emporium. Pick 
+                        up your school robes for your house, as well  as, time-turners and horcruxes.</p>
                 </div>
             </div>
         </div>

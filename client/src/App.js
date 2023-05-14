@@ -9,7 +9,11 @@ import Review from './components/Review';
 import KingsCross from './places/KingsCross';
 import London from './places/London';
 import MyPlaces from './components/MyPlaces';
-
+import Hogsmeade from './places/Hogsmeade';
+import DiagonAlley from './places/DiagonAlley'
+import HogwartsExpress from "./places/HogwartsExpress"
+import Hogwarts from './places/Hogwarts';
+import UK from './places/UK';
 
 function App() {
   // const [path, setPath] = useState("");
@@ -29,6 +33,11 @@ function App() {
           <Route path='/myplaces' element={<MyPlaces />} />
           <Route path='/kingscross' element={<KingsCross />} />
           <Route path='/London' element={<London />} />
+          <Route path='/hogsmeade' element={<Hogsmeade/>}/>
+          <Route path='diagonalley' element={<DiagonAlley/>}/>
+          <Route path='hogwartsexpress' element={<HogwartsExpress/>}/>
+          <Route path='hogwarts' element={<Hogwarts/>}/>
+          <Route path='uk-locations' element={<UK/>}/>
         </Routes>
       </BrowserRouter>
     </div>
