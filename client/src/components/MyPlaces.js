@@ -11,21 +11,37 @@ const MyPlaces = () => {
     navigate('/');
   };
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({
+    name: '',
+    email:'',
+    description:''
+  });
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:8000/api/allTripSchema');
+  //       setData(response.data);
+  //       console.log(response.data.Wizard);
+  //     } catch (error) {
+  //       console.error('Error:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/allTripSchema');
-        setData(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    axios.get(`http://localhost:8000/api/allTripSchema`)
+        .then((res) => {
+            console.log( res)
+            console.log( res.data)
+            setData(res.data.Wizard)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+}, [])
 
   console.log(data);
 

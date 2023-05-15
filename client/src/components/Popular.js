@@ -20,10 +20,6 @@ const Popular = () => {
         navigate('/')
     }
 
-    const kingsCross = (e) => {
-        navigate("/kingscross")
-    }
-
     const London = (e) => {
         navigate("/London")
     }

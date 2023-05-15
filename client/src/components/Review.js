@@ -22,7 +22,7 @@ const Review = () => {
       setName('');
       setEmail('');
       setMessage('');
-      // navigate("/myplaces")
+      navigate("/myplaces")
     } catch (error) {
       console.error('Error:', error);
     }
