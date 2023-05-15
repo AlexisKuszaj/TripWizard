@@ -30,11 +30,6 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/myfavorites" className="link">
-                  My Favorites
-                </Link>
-              </li>
-              <li>
                 <Link to="/myPlaces" className="link">
                   My Places
                 </Link>

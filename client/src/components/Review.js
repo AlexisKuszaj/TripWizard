@@ -12,7 +12,7 @@ const Review = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:8000/api/newTripSchema', {
-        firstName: name,
+        name: name,
         email: email,
         description: message,
       });

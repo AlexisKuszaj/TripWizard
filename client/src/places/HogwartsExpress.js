@@ -49,13 +49,13 @@ const HogwartsExpress = () => {
                             <a href='https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida/the-wizarding-world-of-harry-potter-diagon-alley'>
                                 <div className='popular-main-content'>
                                     <img className='img-hover photo-grid-item' src={hogwartsexpress} alt="img2" />
-                                    <p className='p-london'> <span>Hogwarts Express at Universal Orlando</span> <br />Take a journey with this ride attraction that will take you in betweent Diagon Alley and Hogsmeade at Universal Orlando </p>
+                                    <p className='p-london'> <span>Hogwarts Express at Universal Orlando</span> <br />Take a journey with this ride attraction that will take you in between Diagon Alley and Hogsmeade at Universal Orlando </p>
                                 </div>
                             </a>
                             <a href='https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida/the-wizarding-world-of-harry-potter-diagon-alley'>
                                 <div className='popular-main-content'>
                                     <img className='img-hover photo-grid-item' src={train2} alt="img2" />
-                                    <p className='p-london'> <span>Platform 9 3/4</span> <br />Come visit the iconic King's Cross Station! In the Movie 1 -
+                                    <p className='p-london'> <span>Platform 9 3/4</span> <br />Come visit the iconic King's Cross Station! In Movie 1 -
                         Harry Potter and the Sorcerers Stone, Harry and his friends dash through a brick wall between 
                         platforms 9 and 10. </p>
                                 </div>
