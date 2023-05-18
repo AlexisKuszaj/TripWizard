@@ -22,13 +22,16 @@ const Review = () => {
       setName('');
       setEmail('');
       setMessage('');
-      navigate("/myplaces")
+      // navigate("/myplaces")
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
+  const handleEdit = (id) => {
 
+    console.log("Edit clicked for ID:", id);
+  };
 
   return (
     <div>
@@ -36,7 +39,7 @@ const Review = () => {
         <div className="side-nav-form">
           <div className="form">
             <h4>Where Have you been?</h4>
-            <p>Let us know where and what you thought!</p>
+            <p>Let us know where <br/> and what you thought!</p>
             <form className="form" onSubmit={handleSubmit}>
               <label htmlFor="name">Name:</label>
               <input
@@ -71,7 +74,9 @@ const Review = () => {
                 Submit
               </button>
             </form>
+            
           </div>
+            
         </div>
       </div>
     </div>

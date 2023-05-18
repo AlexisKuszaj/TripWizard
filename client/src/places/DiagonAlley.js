@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import unnamed from '../Images/unnamed.png'
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
@@ -8,13 +8,17 @@ import Footer from '../components/Footer';
 
 
 
+
 const DiagonAlley = () => {
+    const [likedItems, setLikedItems] = useState([]);
     const navigate = useNavigate()
     const homeLogo = (e) => {
         navigate('/')
-
     }
 
+    const handleLike = (item) => {
+    setLikedItems([...likedItems, item]);
+ }
     return (
         <div>
             <div>
@@ -34,9 +38,11 @@ const DiagonAlley = () => {
                                     <div className='popular-main-content'>
                                         <img className='img-hover photo-grid-item' src={leadenhall} alt="img1" />
                                         <p className='p-london'> <span>Leadenhall Market</span> <br />Another London location, this market was used for the setting of Diagon Alley and the Leaky Cauldron.</p>
+                                       
                                     </div>
                                 </div>
                             </a>
+                                        <button onClick={() => handleLike({image: leadenhall, title: 'Leadenhall Market'})}>Favorite</button>
                             <a href='https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida/the-wizarding-world-of-harry-potter-diagon-alley'>
                                 <div className='popular-main-content'>
                                     <img className='img-hover photo-grid-item' src={diagon} alt="img2" />

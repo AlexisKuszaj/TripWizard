@@ -14,22 +14,21 @@ import DiagonAlley from './places/DiagonAlley'
 import HogwartsExpress from "./places/HogwartsExpress"
 import Hogwarts from './places/Hogwarts';
 import UK from './places/UK';
+import MyPlacesDisplay from './components/MyPlacesDisplay';
 
 function App() {
   // const [path, setPath] = useState("");
-
-
-
 
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
+<Route path='/contact' element={<Contact />} />
           <Route path='/popular' element={<Popular />} />
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
           <Route path='/review' element={<Review />} />
+          <Route path='MyPlacesDisplay' element={<MyPlacesDisplay/>}/>
           <Route path='/myplaces' element={<MyPlaces />} />
           <Route path='/kingscross' element={<KingsCross />} />
           <Route path='/London' element={<London />} />
@@ -44,4 +43,9 @@ function App() {
   );
 }
 
+
 export default App;
+
+
+
+

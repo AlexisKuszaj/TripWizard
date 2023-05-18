@@ -10,6 +10,7 @@ import Footer from './Footer';
 import train from "../Images/HogwartsExpress.jpg"
 import hogsmeade from "../Images/hogs.jpg"
 import dalley from "../Images/d-alley.jpg"
+import MyPlacesDisplay from './MyPlacesDisplay';
 
 // import Home from './Home';
 
@@ -51,6 +52,7 @@ const Popular = () => {
                 <div className='side-bars'>
                     <NavBar />
                     <Review />
+                    <MyPlacesDisplay/>
                 </div>
 
 

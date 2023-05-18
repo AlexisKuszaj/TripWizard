@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Popular from "./Popular";
 
 const NavBar = () => {
+ 
+
 
   return (
     <div className="NavBar">
@@ -36,11 +38,12 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-
+         
+        
         </div>
       </div>
-    </div>
-  );
+      </div>
+      );
 };
 
-export default NavBar;
+      export default NavBar;

@@ -119,6 +119,8 @@ nav {
 }
 
 .side-nav {
+  display:flex;
+  flex-direction: column;
   background-color: white;
   height: 300px;
   width: 300px;
@@ -256,6 +258,15 @@ a:hover .overlay-links {
   margin-top: 40px;
 
 }
+.side-nav-form-display {
+  background-color: white;
+  height: 1000px;
+  width: 300px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
+
+}
 
 .travel-card {
   border: 2px solid black;
@@ -287,10 +298,12 @@ a:hover .overlay-links {
 
 .photo-grid {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 20px;
 
 }
+
 
 .Container {
   background-color: #E1D8C9;
