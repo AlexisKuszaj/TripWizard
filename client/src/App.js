@@ -27,8 +27,8 @@ function App() {
           <Route path='/popular' element={<Popular />} />
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/review' element={<Review />} />
-          <Route path='MyPlacesDisplay' element={<MyPlacesDisplay/>}/>
+          <Route path='/review/:id' element={<Review />} />
+          <Route path='MyPlacesDisplay/:id' element={<MyPlacesDisplay/>}/>
           <Route path='/myplaces' element={<MyPlaces />} />
           <Route path='/kingscross' element={<KingsCross />} />
           <Route path='/London' element={<London />} />
