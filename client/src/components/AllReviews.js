@@ -116,24 +116,26 @@ const AllReviews = () => {
     // };
 
     const mainSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:8000/api/newTripSchema',
-            {
-                name: name,
-                email: email,
-                description: message,
-            })
-            .then((res) => {
-                console.log(res.data)
-                setData([...data, res.data]);
-                setName('');
-                setEmail('');
-                setDescription('');
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+        e.preventDefault();
+      
+        axios
+          .post('http://localhost:8000/api/newTripSchema', {
+            name: name,
+            email: email,
+            description: message,
+          })
+          .then((res) => {
+            const newTripSchema = res.data;
+            setData((prevData) => [...prevData, newTripSchema]);
+            setName('');
+            setEmail('');
+            setMessage('');
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+      
 
     return (
         <div>
@@ -227,37 +229,39 @@ const AllReviews = () => {
                                         {/* {data &&
                                         Array.isArray(data) && */}
                                         {data.map((items) => (
-                                            <div key={items._id} className="reviews">
-                                                <div className="review">
-                                                    <h4>{items.name}</h4>
-                                                    <p>{items.description}</p>
-                                                </div>
-                                                <div className="reviewButtons">
-                                                    <button onClick={() => deleteFilter(items._id)}>Delete</button>
-                                                    {editItemId === items._id ? (
-                                                        <div>
-                                                            <input
-                                                                type="text"
-                                                                name="name"
-                                                                value={name}
-                                                                onChange={handleInputChange}
-                                                                placeholder="Name"
-                                                            />
-                                                            <input
-                                                                type="text"
-                                                                name="description"
-                                                                value={description}
-                                                                onChange={handleInputChange}
-                                                                placeholder="Description"
-                                                            />
-                                                            <button onClick={() => submitHandler(items._id)}>Submit</button >                 </div>
-                                                    ) : (
-                                                        <button onClick={() => handleEdit(items._id)}>Edit</button>
-                                                    )}
-                                                </div>
-                                                <hr />
-                                            </div>
-                                        ))}
+  <div key={items._id} className="reviews">
+    <div className="review">
+      <h4>{items.name}</h4>
+      <p>{items.description}</p>
+    </div>
+    <div className="reviewButtons">
+      <button onClick={() => deleteFilter(items._id)}>Delete</button>
+      {editItemId === items._id ? (
+        <div>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleInputChange}
+            placeholder="Name"
+          />
+          <input
+            type="text"
+            name="description"
+            value={description}
+            onChange={handleInputChange}
+            placeholder="Description"
+          />
+          <button onClick={() => submitHandler(items._id)}>Submit</button>
+        </div>
+      ) : (
+        <button onClick={() => handleEdit(items._id)}>Edit</button>
+      )}
+    </div>
+    <hr  />
+  </div>
+))}
+
                                     </div>
                                 </div>
 
