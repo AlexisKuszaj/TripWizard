@@ -97,19 +97,19 @@ export default MyPlaces;
 //     description:''
 //   });
 
-//   // useEffect(() => {
-//   //   const fetchData = async () => {
-//   //     try {
-//   //       const response = await axios.get('http://localhost:8000/api/allTripSchema');
-//   //       setData(response.data);
-//   //       console.log(response.data.Wizard);
-//   //     } catch (error) {
-//   //       console.error('Error:', error);
-//   //     }
-//   //   };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:8000/api/allTripSchema');
+  //       setData(response.data);
+  //       console.log(response.data.Wizard);
+  //     } catch (error) {
+  //       console.error('Error:', error);
+  //     }
+  //   };
 
-//   //   fetchData();
-//   // }, []);
+  //   fetchData();
+  // }, []);
 
 //   useEffect(() => {
 //     axios.get(`http://localhost:8000/api/allTripSchema`)

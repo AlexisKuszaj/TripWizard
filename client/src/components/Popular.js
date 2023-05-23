@@ -52,7 +52,7 @@ const Popular = () => {
                 <div className='side-bars'>
                     <NavBar />
                     <Review />
-                    <MyPlacesDisplay/>
+                    {/* <MyPlacesDisplay/> */}
                 </div>
 
 

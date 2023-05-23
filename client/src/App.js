@@ -15,6 +15,9 @@ import HogwartsExpress from "./places/HogwartsExpress"
 import Hogwarts from './places/Hogwarts';
 import UK from './places/UK';
 import MyPlacesDisplay from './components/MyPlacesDisplay';
+import AllReviews from './components/AllReviews';
+
+
 
 function App() {
   // const [path, setPath] = useState("");
@@ -23,20 +26,24 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-<Route path='/contact' element={<Contact />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/popular' element={<Popular />} />
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/review/:id' element={<Review />} />
-          <Route path='MyPlacesDisplay/:id' element={<MyPlacesDisplay/>}/>
+          <Route path='MyPlacesDisplay/:id' element={<MyPlacesDisplay />} />
           <Route path='/myplaces' element={<MyPlaces />} />
           <Route path='/kingscross' element={<KingsCross />} />
           <Route path='/London' element={<London />} />
-          <Route path='/hogsmeade' element={<Hogsmeade/>}/>
-          <Route path='diagonalley' element={<DiagonAlley/>}/>
-          <Route path='hogwartsexpress' element={<HogwartsExpress/>}/>
-          <Route path='hogwarts' element={<Hogwarts/>}/>
-          <Route path='uk-locations' element={<UK/>}/>
+          <Route path='/hogsmeade' element={<Hogsmeade />} />
+          <Route path='/diagonalley' element={<DiagonAlley />} />
+          <Route path='/hogwartsexpress' element={<HogwartsExpress />} />
+          <Route path='/hogwarts' element={<Hogwarts />} />
+          <Route path='/uk-locations' element={<UK />} />
+          <Route path='/reviews' element={<AllReviews />} />
+        
+
+
         </Routes>
       </BrowserRouter>
     </div>
