@@ -122,12 +122,18 @@ nav {
   display:flex;
   flex-direction: column;
   background-color: white;
-  height: 300px;
+  height: 260px;
   width: 300px;
   border-radius: 20px;
   margin-left: 20px;
   margin-top: 40px;
 
+}
+
+.about-us-text {
+  margin-left: 40px;
+  margin-right: 40px;
+  line-height: 3;
 }
 
 .main-content {
@@ -413,6 +419,12 @@ span {
   height:270px;
   border-radius: 20px;
 }
+
+.contact-photo-alexis{
+  border-radius: 20px;
+  height: 350px;
+}
+
 
 .header{
   font-size: 30px;

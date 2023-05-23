@@ -32,9 +32,9 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/myPlaces" className="link">
+                {/* <Link to="/myPlaces" className="link">
                   My Places
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </div>

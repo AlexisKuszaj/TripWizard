@@ -1,7 +1,7 @@
 import React from 'react';
 import unnamed from '../Images/unnamed.png'
 import { Link, useNavigate } from 'react-router-dom'
-import alexis from "../Images/alexis.jpg"
+import alexis from "../Images/alexis.JPG"
 import nicole from "../Images/nicole.jpg"
 import Footer from "../components/Footer"
 import NavBar from '../components/NavBar';
@@ -31,8 +31,8 @@ const Contact = () => {
                         <h2 className='header'>Contact Us</h2>
                         <div className="photo-grid">
                             <div className='creator-card'>
-                                <img src={alexis} alt='Alexis Kuszaj' className='contact-photo'></img>
-                                <p>Aleix Kuszaj</p> <br />
+                                <img src={alexis} alt='Alexis Kuszaj' className='contact-photo-alexis'></img>
+                                <p>Alexis Kuszaj</p> <br />
                                 <div className='contact-socials'>
 
                                     <a href="https://github.com/AlexisKuszaj" target='blank'>

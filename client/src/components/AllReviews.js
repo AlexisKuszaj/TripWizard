@@ -6,32 +6,34 @@ import NavBar from "./NavBar";
 
 const AllReviews = () => {
     const [data, setData] = useState([]);
-    const navigate = useNavigate()
-    // const { _id } = useParams();
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [description, setDescription] = useState('');
     const [editItemId, setEditItemId] = useState(null);
     const [message, setMessage] = useState('');
     const homeLogo = (e) => {
-        navigate('/')
+        navigate('/');
     }
 
     useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = () => {
         axios.get(`http://localhost:8000/api/allTripSchema`)
             .then((res) => {
-                console.log(res)
-                console.log(res.data)
-                setData(res.data.Wizard)
+                console.log(res);
+                console.log(res.data);
+                setData(res.data.Wizard);
             })
             .catch((err) => {
-                console.log(err)
-            })
-    }, [])
+                console.log(err);
+            });
+    };
 
     const deleteFilter = (id) => {
-        axios
-            .delete(`http://localhost:8000/api/deleteTripSchema/${id}`)
+        axios.delete(`http://localhost:8000/api/deleteTripSchema/${id}`)
             .then((res) => {
                 setData(data.filter((item) => item._id !== id));
             })
@@ -44,7 +46,6 @@ const AllReviews = () => {
         setEditItemId(id);
         const itemToEdit = data.find((item) => item._id === id);
         setName(itemToEdit.name);
-        setEmail(itemToEdit.email);
         setDescription(itemToEdit.description);
     };
 
@@ -54,92 +55,57 @@ const AllReviews = () => {
                 return {
                     ...item,
                     name: name,
-                    email: email,
                     description: description,
-
                 };
             }
             return item;
         });
 
-
-        axios
-            .put(`http://localhost:8000/api/updateTripSchema/${id}`, {
-                name: name,
-                email: email,
-                description: description
-                // name,
-                // email,
-                // description
-            })
-            .then((res) => {
-                setData(updatedData);
-                setName('');
-                setEmail('');
-                setDescription('');
-                setEditItemId(null);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        axios.put(`http://localhost:8000/api/updateTripSchema/${id}`, {
+            name: name,
+            description: description
+        })
+        .then((res) => {
+            setData(updatedData);
+            setEditItemId(null);
+            setName('');
+            setDescription('');
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     };
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         if (name === "name") {
             setName(value);
-        } else if (name === "email") {
-            setEmail(value);
         } else if (name === "description") {
             setDescription(value);
         }
     };
 
-
-
-    // const mainSubmit = (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         const response = axios.post('http://localhost:8000/api/newTripSchema', {
-    //             name: name,
-    //             email: email,
-    //             description: message,
-    //         });
-    //         console.log(response.data);
-    //         setData([...data, data]);
-    //         setName('');
-    //         setEmail('');
-    //         setMessage('');
-    //     } catch (error) {
-    //         console.error('Error:', error);
-    //     }
-    // };
-
     const mainSubmit = (e) => {
         e.preventDefault();
       
-        axios
-          .post('http://localhost:8000/api/newTripSchema', {
+        axios.post('http://localhost:8000/api/newTripSchema', {
             name: name,
             email: email,
             description: message,
-          })
-          .then((res) => {
-            const newTripSchema = res.data;
-            setData((prevData) => [...prevData, newTripSchema]);
+        })
+        .then((res) => {
             setName('');
             setEmail('');
             setMessage('');
-          })
-          .catch((err) => {
+            fetchData();
+        })
+        .catch((err) => {
             console.log(err);
-          });
-      };
-      
+        });
+    };
 
     return (
         <div>
-
             <div>
                 <div className='Container container-long'>
                     <nav className='nav-secondary'>
@@ -186,27 +152,6 @@ const AllReviews = () => {
                                         Submit
                                     </button>
                                 </form>
-                                <div>
-                                    <hr />
-                                </div>
-                                <div>
-                                    <div className="outerBoxReviews">
-
-                                        <div className='reviews-innerbox'>
-                                            <div>
-                                                <h4>Taylor Smith</h4>
-                                                <p>Loved Universal's Harry Potter World so much!!</p>
-                                                <hr />
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div className='reviews-innerbox'>
-                                            <div>
-                                                <h4>Alexis Kuszaj</h4>
-                                                <p>The Cauldron is the best</p>
-                                                <hr />
-                                            </div>
-                                            <div></div>
                                         </div>
                                         <div className='reviews-innerbox'>
                                             <div>
@@ -224,47 +169,81 @@ const AllReviews = () => {
                                             </div>
                                             <div></div>
                                         </div>
-
-
-                                        {/* {data &&
-                                        Array.isArray(data) && */}
-                                        {data.map((items) => (
-  <div key={items._id} className="reviews">
-    <div className="review">
-      <h4>{items.name}</h4>
-      <p>{items.description}</p>
-    </div>
-    <div className="reviewButtons">
-      <button onClick={() => deleteFilter(items._id)}>Delete</button>
-      {editItemId === items._id ? (
-        <div>
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleInputChange}
-            placeholder="Name"
-          />
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={handleInputChange}
-            placeholder="Description"
-          />
-          <button onClick={() => submitHandler(items._id)}>Submit</button>
-        </div>
-      ) : (
-        <button onClick={() => handleEdit(items._id)}>Edit</button>
-      )}
-    </div>
-    <hr  />
-  </div>
-))}
-
+ <div className="outerBoxReviews">
+                               <div className='reviews-innerbox'>
+                                 <div>
+                                   <h4>Taylor Smith</h4>
+                                   <p>Loved Universal's Harry Potter World so much!!</p>
+                                   <hr />
+                                 </div>
+                                 <div></div>
+                               </div>
+                               <div className='reviews-innerbox'>
+                                 <div>
+                                   <h4>Alexis Kuszaj</h4>
+                                   <p>The Cauldron is the best</p>
+                                   <hr />
+                                 </div>
+                                 <div></div>
+                               </div>
+                               <div className='reviews-innerbox'>
+                                 <div>
+                                   <h4>Potter</h4>
+                                   <p>I love London so much, reminds me of the films</p>
+                                   <hr />
+                                 </div>
+                                 <div></div>
+                               </div>
+                               <div className='reviews-innerbox'>
+                                 <div>
+                                   <h4>Nicole Shafer</h4>
+                                   <p>Visiting Universal always brings me home</p>
+                                    <hr />
+                                  </div>
+                                  <div></div>
+                                </div>
+                                
+                                <div>
+                                    <div className="outerBoxReviews">
+                                        {data.map((item) => (
+                                            <div key={item._id} className="reviews-innerbox">
+                                                <div>
+                                                    <h4>{item.name}</h4>
+                                                    <p>{item.description}</p>
+                                                    <hr />
+                                                </div>
+                                                <div>
+                                                    <button onClick={() => deleteFilter(item._id)}>Delete</button>
+                                                    {editItemId === item._id ? (
+                                                        <div>
+                                                            <input
+                                                                type="text"
+                                                                name="name"
+                                                                value={name}
+                                                                onChange={handleInputChange}
+                                                                placeholder="Name"
+                                                            />
+                                                            <input
+                                                                type="text"
+                                                                name="description"
+                                                                value={description}
+                                                                onChange={handleInputChange}
+                                                                placeholder="Description"
+                                                            />
+                                                            <button onClick={() => submitHandler(item._id)}>Submit</button>
+                                                        </div>
+                                                    ) : (
+                                                        <button onClick={() => handleEdit(item._id)}>Edit</button>
+                                                        
+                                                    )}
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                        ))}
+                                        
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -275,5 +254,3 @@ const AllReviews = () => {
 }
 
 export default AllReviews;
-
-
