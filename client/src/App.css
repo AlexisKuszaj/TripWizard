@@ -249,16 +249,91 @@ a:hover .overlay-links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px
+  margin-top: 10px;
+  font-family:sans-serif;
 }
+
+.review-input{
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.review-text{
+  margin:2px;
+}
+
+.reviewHeight{
+  height:20px;
+}
+
+/* .review-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 30px;
+  font-size: 24px;
+} */
 
 .submit {
-  margin-top: 20px;
+  width:120px;
+  height:20px;
+  margin:20px;
+  opacity: 65%;
+  border:2px solid gray;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.btn {
+  margin: 5px;
+  height:20px;
+  opacity: 65%;
+  border:2px solid gray;
+  border-radius: 7px;
 }
 
+.submit:hover{
+  padding:10px;
+}
+
+ .review{
+  font-size: 26px;
+ }
+
+.edit-form{
+  display: flex;
+  flex-direction: column;
+}
+.review-button{
+  /* margin:20px; */
+  border:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background-color: white;
+}
+
+.review-button:hover{
+  /* padding: 5px; */
+  color: gold;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0;
+  font-size: 26px;
+}
+
+.form2{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
 .side-nav-form {
   background-color: white;
-  height: 415px;
+  height: 455px;
   width: 300px;
   border-radius: 20px;
   margin-left: 20px;
@@ -348,7 +423,8 @@ a:hover .overlay-links {
 .container-long {
   background-color: #E1D8C9;
   object-fit: cover;
-  height: 1500px
+  height: 100%;
+  padding-bottom:50px;
 }
 
 .photo-grid-item {
@@ -394,9 +470,9 @@ span {
 
 .footer {
   padding: 10px;
-  height: 70px;
+  height: 40px;
   width: 100%;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .creator-card{
@@ -434,20 +510,4 @@ span {
 .reviewBreak{
   width:1000px;
 }
-/* 
-.reviews-innerbox{
-  display: flex;
-} */
 
-/* .reviews{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap:40px;
-}
-.reviewButtons{
-  display: flex;
-  justify-content: end;
-  height:20px;
-  gap:10px;
-} */

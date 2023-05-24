@@ -42,7 +42,7 @@ const DiagonAlley = () => {
                                     </div>
                                 </div>
                             </a>
-                                        <button onClick={() => handleLike({image: leadenhall, title: 'Leadenhall Market'})}>Favorite</button>
+
                             <a href='https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida/the-wizarding-world-of-harry-potter-diagon-alley'>
                                 <div className='popular-main-content'>
                                     <img className='img-hover photo-grid-item' src={diagon} alt="img2" />

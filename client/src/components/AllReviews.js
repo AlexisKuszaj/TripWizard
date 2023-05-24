@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams, useNavigate } from 'react-router-dom';
 import unnamed from "../Images/unnamed.png"
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 const AllReviews = () => {
     const [data, setData] = useState([]);
@@ -12,10 +13,14 @@ const AllReviews = () => {
     const [description, setDescription] = useState('');
     const [editItemId, setEditItemId] = useState(null);
     const [message, setMessage] = useState('');
+    const [isVisible, setIsVisible] = useState(false)
     const homeLogo = (e) => {
         navigate('/');
     }
 
+    const reviewHandler = () => {
+        setIsVisible(!isVisible)
+    }
     useEffect(() => {
         fetchData();
     }, []);
@@ -65,15 +70,15 @@ const AllReviews = () => {
             name: name,
             description: description
         })
-        .then((res) => {
-            setData(updatedData);
-            setEditItemId(null);
-            setName('');
-            setDescription('');
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+            .then((res) => {
+                setData(updatedData);
+                setEditItemId(null);
+                setName('');
+                setDescription('');
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     const handleInputChange = (event) => {
@@ -87,21 +92,22 @@ const AllReviews = () => {
 
     const mainSubmit = (e) => {
         e.preventDefault();
-      
+
         axios.post('http://localhost:8000/api/newTripSchema', {
             name: name,
             email: email,
             description: message,
         })
-        .then((res) => {
-            setName('');
-            setEmail('');
-            setMessage('');
-            fetchData();
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+            .then((res) => {
+                setIsVisible(false)
+                setName('');
+                setEmail('');
+                setMessage('');
+                fetchData();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     return (
@@ -116,93 +122,98 @@ const AllReviews = () => {
                     <div className='main-content'>
                         <NavBar />
                         <div className='main-popular'>
-                            <h2 className='header'>Reviews</h2>
+                           <div className="review-header">
+                           <p className="review">Reviews</p>
                             <div className="photo-grid">
-                                <form className="form" onSubmit={mainSubmit}>
-                                    <label htmlFor="name">Name:</label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        minLength="3"
-                                        maxLength="30"
-                                        required
-                                    />
-                                    <label htmlFor="email">Email:</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        required
-                                    />
-                                    <label htmlFor="message">Tell us your thoughts!</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows="5"
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        required
-                                    ></textarea>
-                                    <button className="submit" type="submit">
-                                        Submit
-                                    </button>
-                                </form>
-                                        </div>
-                                        <div className='reviews-innerbox'>
-                                            <div>
-                                                <h4>Potter</h4>
-                                                <p>I love london so much, reminds me of the films</p>
-                                                <hr />
-                                            </div>
-                                            <div></div>
-                                        </div>
-                                        <div className='reviews-innerbox'>
-                                            <div>
-                                                <h4>Nicole Shafer</h4>
-                                                <p>Visiting universal always brings me home</p>
-                                                <hr />
-                                            </div>
-                                            <div></div>
-                                        </div>
- <div className="outerBoxReviews">
-                               <div className='reviews-innerbox'>
-                                 <div>
-                                   <h4>Taylor Smith</h4>
-                                   <p>Loved Universal's Harry Potter World so much!!</p>
-                                   <hr />
-                                 </div>
-                                 <div></div>
-                               </div>
-                               <div className='reviews-innerbox'>
-                                 <div>
-                                   <h4>Alexis Kuszaj</h4>
-                                   <p>The Cauldron is the best</p>
-                                   <hr />
-                                 </div>
-                                 <div></div>
-                               </div>
-                               <div className='reviews-innerbox'>
-                                 <div>
-                                   <h4>Potter</h4>
-                                   <p>I love London so much, reminds me of the films</p>
-                                   <hr />
-                                 </div>
-                                 <div></div>
-                               </div>
-                               <div className='reviews-innerbox'>
-                                 <div>
-                                   <h4>Nicole Shafer</h4>
-                                   <p>Visiting Universal always brings me home</p>
+                                <button className="review-button" onClick={reviewHandler}>Post a review</button>
+                           </div>
+                                {isVisible &&
+                                    <form className="form2" onSubmit={mainSubmit}>
+                                        <label htmlFor="name">Name:</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            minLength="3"
+                                            maxLength="30"
+                                            required
+                                        />
+                                        <label htmlFor="email">Email:</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
+                                        <label htmlFor="message">Tell us your thoughts!</label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows="5"
+                                            value={message}
+                                            onChange={(e) => setMessage(e.target.value)}
+                                            required
+                                        ></textarea>
+                                        <button className="submit" type="submit">
+                                            Submit
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                            <div className='reviews-innerbox'>
+                                <div>
+                                    <h4>Potter</h4>
+                                    <p>I love london so much, reminds me of the films</p>
                                     <hr />
-                                  </div>
-                                  <div></div>
                                 </div>
-                                
+                                <div></div>
+                            </div>
+                            <div className='reviews-innerbox'>
+                                <div>
+                                    <h4>Nicole Shafer</h4>
+                                    <p>Visiting universal always brings me home</p>
+                                    <hr />
+                                </div>
+                                <div></div>
+                            </div>
+                            <div className="outerBoxReviews">
+                                <div className='reviews-innerbox'>
+                                    <div>
+                                        <h4>Taylor Smith</h4>
+                                        <p>Loved Universal's Harry Potter World so much!!</p>
+                                        <hr />
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div className='reviews-innerbox'>
+                                    <div>
+                                        <h4>Alexis Kuszaj</h4>
+                                        <p>The Cauldron is the best</p>
+                                        <hr />
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div className='reviews-innerbox'>
+                                    <div>
+                                        <h4>Potter</h4>
+                                        <p>I love London so much, reminds me of the films</p>
+                                        <hr />
+                                    </div>
+                                    <div></div>
+                                </div>
+                                <div className='reviews-innerbox'>
+                                    <div>
+                                        <h4>Nicole Shafer</h4>
+                                        <p>Visiting Universal always brings me home</p>
+                                        <hr />
+                                    </div>
+                                    <div></div>
+                                </div>
+
                                 <div>
                                     <div className="outerBoxReviews">
                                         {data.map((item) => (
@@ -210,12 +221,15 @@ const AllReviews = () => {
                                                 <div>
                                                     <h4>{item.name}</h4>
                                                     <p>{item.description}</p>
-                                                    <hr />
                                                 </div>
+                                                    
                                                 <div>
-                                                    <button onClick={() => deleteFilter(item._id)}>Delete</button>
+                                                    <button
+                                                    className="btn"
+                                                     onClick={() => deleteFilter(item._id)}>Delete</button>
                                                     {editItemId === item._id ? (
-                                                        <div>
+                                                        <div className="edit-form">
+                                                            <label>Name:</label>
                                                             <input
                                                                 type="text"
                                                                 name="name"
@@ -223,25 +237,31 @@ const AllReviews = () => {
                                                                 onChange={handleInputChange}
                                                                 placeholder="Name"
                                                             />
-                                                            <input
-                                                                type="text"
+                                                            <label>Review</label>
+                                                            <textarea
+                                                                type="textarea"
                                                                 name="description"
                                                                 value={description}
                                                                 onChange={handleInputChange}
                                                                 placeholder="Description"
                                                             />
-                                                            <button onClick={() => submitHandler(item._id)}>Submit</button>
+                                                            <button 
+                                                            className="btn"
+                                                            onClick={() => submitHandler(item._id)
+                                                            }>Submit</button>
                                                         </div>
                                                     ) : (
-                                                        <button onClick={() => handleEdit(item._id)}>Edit</button>
+                                                        <button
                                                         
+                                                        className="btn" onClick={() => handleEdit(item._id)}>Edit</button>
+
                                                     )}
-                                                    
+
                                                 </div>
+                                                <hr />
                                             </div>
-                                            
                                         ))}
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -249,6 +269,7 @@ const AllReviews = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

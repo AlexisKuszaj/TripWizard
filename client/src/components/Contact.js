@@ -1,7 +1,7 @@
 import React from 'react';
 import unnamed from '../Images/unnamed.png'
 import { Link, useNavigate } from 'react-router-dom'
-import alexis from "../Images/alexis.JPG"
+import alexis from "../Images/alexis.jpg"
 import nicole from "../Images/nicole.jpg"
 import Footer from "../components/Footer"
 import NavBar from '../components/NavBar';

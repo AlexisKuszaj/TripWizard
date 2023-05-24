@@ -3,6 +3,10 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import unnamed from "../Images/unnamed.png"
 import { useNavigate } from 'react-router-dom';
+import alnwick from "../Images/alnwick.jpg"
+import gloucester from "../Images/gloucester.jpg"
+import library from "../Images/library.jpg"
+import oxford from "../Images/oxford.jpg"
 
 const Hogwarts = () => {
     const navigate = useNavigate()
@@ -25,11 +29,36 @@ const Hogwarts = () => {
                             <h2 className='header'>Hogwarts</h2>
                             <div className="photo-grid">
 
-                                <a href="https://thecauldron.io/london?gclid=Cj0KCQjwpPKiBhDvARIsACn-gzD-pOmvp_78jRtujW1ERzdOTj0bfHsSz65xW8tE1d6StswiPTK3V44aAvd1EALw_wcB">
+                                <a href="https://www.alnwickcastle.com/explore/on-screen/harry-potter">
                                     <div className='overlay-link'>
                                         <div className='popular-main-content'>
-                                            <img className='img-hover photo-grid-item' src={unnamed} alt="img1" />
-                                            <p className='p-london'> <span>The Cauldron Co.</span> <br />Test your potion skills at Londons emersive cocktail class. <br /> Throw on your cloak, wield your wand, and brew drinkable elixers.</p>
+                                            <img className='img-hover photo-grid-item' src={alnwick} alt="Alnwick Castle" />
+                                            <p className='p-london'> <span>Alnwick Castle, England</span> <br />This castle was a big filming location and inspiration for Hogwarts <br /> </p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.alnwickcastle.com/explore/on-screen/harry-potter">
+                                    <div className='overlay-link'>
+                                        <div className='popular-main-content'>
+                                            <img className='img-hover photo-grid-item' src={oxford} alt="Oxford University" />
+                                            <p className='p-london'> <span>Oxford University</span> <br />You can visit The Great Hall at Christ Church College inside Oxford University <br /> </p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://www.livrarialello.pt/en/home">
+                                    <div className='overlay-link'>
+                                        <div className='popular-main-content'>
+                                            <img className='img-hover photo-grid-item' src={library} alt="Livraria Lello" />
+                                            <p className='p-london'> <span>Livraria Lello, Porto, Portugal</span> <br />Quoted as one of the most beautiful bookstores in the world <br />This bookstore was inspiration for the Hogwarts neo-gothic library aesthetic </p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://gloucestercathedral.org.uk/">
+                                    <div className='overlay-link'>
+                                        <div className='popular-main-content'>
+                                            <img className='img-hover photo-grid-item' src={gloucester} alt="Glucester Cathedral" />
+                                            <p className='p-london'> <span>
+                                                Gloucester Cathedral</span> <br /> These Cathedral hallways are seen throughout the film many times as  <br />as Gryffindors head to their common room. This is also the filming location when they learn the Chamber of Secrets has been opened. </p>
                                         </div>
                                     </div>
                                 </a>

@@ -39,7 +39,7 @@ function App() {
           <Route path='/diagonalley' element={<DiagonAlley />} />
           <Route path='/hogwartsexpress' element={<HogwartsExpress />} />
           <Route path='/hogwarts' element={<Hogwarts />} />
-          <Route path='/uk-locations' element={<UK />} />
+          <Route path='/other-locations' element={<UK />} />
           <Route path='/reviews' element={<AllReviews />} />
         
 

@@ -10,9 +10,9 @@ import Footer from './Footer';
 import train from "../Images/HogwartsExpress.jpg"
 import hogsmeade from "../Images/hogs.jpg"
 import dalley from "../Images/d-alley.jpg"
-import MyPlacesDisplay from './MyPlacesDisplay';
-
+import hogwartsCastle from "../Images/hogwartsCastle.jpg"
 // import Home from './Home';
+import scottishHighlands from "../Images/scottishHighlands.jpg"
 
 const Popular = () => {
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ const Popular = () => {
         navigate('/hogwartsexpress')
     }
     const UK = (e) => {
-        navigate('/uk-locations')
+        navigate('/other-locations')
     }
     const Hogwarts = (e) => {
         navigate('/hogwarts')
@@ -88,17 +88,17 @@ const Popular = () => {
                         </div>
                     </div>
                     <div className="travel-card" onClick={Hogwarts}>
-                        <img src={kingscross} alt="Hogwarts"
+                        <img src={hogwartsCastle} alt="Hogwarts"
                             className="photo-card"></img>
                         <div className='info-section'>
                             <div className="name">Hogwarts</div>
                         </div>
                     </div>
                     <div className="travel-card" onClick={UK}>
-                        <img src={kingscross} alt="United Kingom"
+                        <img src={scottishHighlands} alt="United Kingom"
                             className="photo-card"></img>
                         <div className='info-section'>
-                            <div className="name">United Kingdom</div>
+                            <div className="name">Other Locations</div>
                         </div>
                     </div>
 

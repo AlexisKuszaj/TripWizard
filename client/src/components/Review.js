@@ -107,8 +107,8 @@ const handleInputChange = (event) => {
   return (
     <div>
       <div className="side-nav-form">
-      <h4>Where Have you been?</h4>
-      <p>Let us know where<br/>and what you thought!</p>
+      <h4 className='review-text'>Where have you been?</h4>
+      <p className='review-text'>Let us know where<br/>and what you thought!</p>
       <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
@@ -120,6 +120,7 @@ const handleInputChange = (event) => {
           minLength="3"
           maxLength="30"
           required
+          className='review-input reviewHeight'
         />
         <label htmlFor="email">Email:</label>
         <input
@@ -129,15 +130,17 @@ const handleInputChange = (event) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className='review-input reviewHeight'
         />
-        <label htmlFor="message">Review:</label>
         <textarea
           id="message"
           name="message"
-          rows="5"
+          rows="7"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
+          className='review-input'
+          placeholder='Leave a review'
         ></textarea>
         <button className="submit" type="submit">
           Submit
@@ -147,38 +150,6 @@ const handleInputChange = (event) => {
       <Link to={`/reviews`}>See All Reviews</Link>
       </div>
       
-
-      {/* <div className='sideNavReviews'>
-      {data &&
-            Array.isArray(data) &&
-            data.map((item) => (
-              <div key={item._id}>
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
-                <button onClick={() => deleteFilter(item._id)}>Delete</button>
-                {editItemId === item._id ? (
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      value={name}
-                      onChange={handleInputChange}
-                      placeholder="Name"
-                    />
-                    <input
-                      type="text"
-                      name="description"
-                      value={description}
-                      onChange={handleInputChange}
-                      placeholder="Description"
-                    />
-                    <button onClick={() => submitHandler(item._id)}>Submit</button >                 </div>
-                ) : (
-                  <button onClick={() => handleEdit(item._id)}>Edit</button>
-                )}
-              </div>
-            ))}
-      </div> */}
     </div>
     </div>
   );
