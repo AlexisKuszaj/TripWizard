@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom'
-import Popular from '../components/Popular.js';
 import unnamed from '../Images/unnamed.png'
 import Cauldron from '../Images/Cauldron.jpg'
 import cursed from '../Images/cursed.jpg'

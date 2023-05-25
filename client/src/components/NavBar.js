@@ -18,7 +18,7 @@ const NavBar = () => {
                   element={<Popular />}
                   className="link"
                 >
-                  Plan
+                  Explore
                 </Link>
               </li>
               <li>
@@ -30,11 +30,6 @@ const NavBar = () => {
                 <Link to="/contact" className="link">
                   Contact
                 </Link>
-              </li>
-              <li>
-                {/* <Link to="/myPlaces" className="link">
-                  My Places
-                </Link> */}
               </li>
             </ul>
           </div>

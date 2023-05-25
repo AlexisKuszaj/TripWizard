@@ -11,23 +11,6 @@ const MyPlacesDisplay = () => {
   const [description, setDescription] = useState('');
   const [editItemId, setEditItemId] = useState(null);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // const fetchData = () => {
-  //   axios
-  //     .get("http://localhost:8000/api/allTripSchema")
-  //     .then((res) => {
-  //       console.log(res);
-  //       console.log(res.data);
-  //       setData(res.data.Wizard);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   useEffect(() => {
     axios.get(`http://localhost:8000/api/allTripSchema`)
         .then((res) => {

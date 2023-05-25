@@ -11,7 +11,6 @@ import train from "../Images/HogwartsExpress.jpg"
 import hogsmeade from "../Images/hogs.jpg"
 import dalley from "../Images/d-alley.jpg"
 import hogwartsCastle from "../Images/hogwartsCastle.jpg"
-// import Home from './Home';
 import scottishHighlands from "../Images/scottishHighlands.jpg"
 
 const Popular = () => {
@@ -52,7 +51,6 @@ const Popular = () => {
                 <div className='side-bars'>
                     <NavBar />
                     <Review />
-                    {/* <MyPlacesDisplay/> */}
                 </div>
 
 

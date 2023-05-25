@@ -125,7 +125,7 @@ const AllReviews = () => {
                            <div className="review-header">
                            <p className="review">Reviews</p>
                             <div className="photo-grid">
-                                <button className="review-button" onClick={reviewHandler}>Post a review</button>
+                            <button type="button" className="review-button btn-link" onClick={reviewHandler}>Post a Review</button>
                            </div>
                                 {isVisible &&
                                     <form className="form2" onSubmit={mainSubmit}>
@@ -158,9 +158,7 @@ const AllReviews = () => {
                                             onChange={(e) => setMessage(e.target.value)}
                                             required
                                         ></textarea>
-                                        <button className="submit" type="submit">
-                                            Submit
-                                        </button>
+                                        <button type="submit" class="btn btn-outline-warning">Submit</button>
                                     </form>
                                 }
                             </div>
@@ -197,22 +195,7 @@ const AllReviews = () => {
                                     </div>
                                     <div></div>
                                 </div>
-                                <div className='reviews-innerbox'>
-                                    <div>
-                                        <h4>Potter</h4>
-                                        <p>I love London so much, reminds me of the films</p>
-                                        <hr />
-                                    </div>
                                     <div></div>
-                                </div>
-                                <div className='reviews-innerbox'>
-                                    <div>
-                                        <h4>Nicole Shafer</h4>
-                                        <p>Visiting Universal always brings me home</p>
-                                        <hr />
-                                    </div>
-                                    <div></div>
-                                </div>
 
                                 <div>
                                     <div className="outerBoxReviews">
@@ -224,9 +207,7 @@ const AllReviews = () => {
                                                 </div>
                                                     
                                                 <div>
-                                                    <button
-                                                    className="btn"
-                                                     onClick={() => deleteFilter(item._id)}>Delete</button>
+                                                    <button type="button" className="btn btn-outline-warning" onClick={() => deleteFilter(item._id)}>Delete</button>
                                                     {editItemId === item._id ? (
                                                         <div className="edit-form">
                                                             <label>Name:</label>
@@ -245,15 +226,12 @@ const AllReviews = () => {
                                                                 onChange={handleInputChange}
                                                                 placeholder="Description"
                                                             />
-                                                            <button 
-                                                            className="btn"
-                                                            onClick={() => submitHandler(item._id)
+                                                             <button type="submit" class="btn btn-outline-warning" onClick={() => submitHandler(item._id)
                                                             }>Submit</button>
+                
                                                         </div>
                                                     ) : (
-                                                        <button
-                                                        
-                                                        className="btn" onClick={() => handleEdit(item._id)}>Edit</button>
+                                                        <button type="button" className="btn btn-outline-warning" onClick={() => handleEdit(item._id)}>Edit</button>
 
                                                     )}
 

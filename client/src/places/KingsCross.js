@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import unnamed from '../Images/unnamed.png'
 import Popular from '../components/Popular.js';
 import HogwartsExpress from '../Images/HogwartsExpress.jpg'
-import London from '../places/London';
 
 
 const KingsCross = () => {

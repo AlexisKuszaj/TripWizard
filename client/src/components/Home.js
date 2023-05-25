@@ -24,7 +24,7 @@ const Home = () => {
           <img className="logo" src={unnamed} alt="Logo" onClick={homeLogo}/>
         </div>
         <ul>
-          <li><Link to="/popular" element={< Popular />} className='link'>Plan</Link></li>
+          <li><Link to="/popular" element={< Popular />} className='link'>Explore</Link></li>
         <li><Link to='/about' className='link'>About</Link></li>
         <li><Link to='contact' className='link'>Contact</Link></li>
         </ul>
